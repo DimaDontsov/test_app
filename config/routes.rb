@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :companies
   get 'last_controller/newLife'
 
   root 'countries#index'

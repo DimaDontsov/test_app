@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Regions</h1>
+<h1>Регионы</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Country</th>
+      <th>Название</th>
+      <th>Страна</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,10 +15,10 @@
     <% @regions.each do |region| %>
       <tr>
         <td><%= region.name %></td>
-        <td><%= region.country %></td>
-        <td><%= link_to 'Show', region %></td>
-        <td><%= link_to 'Edit', edit_region_path(region) %></td>
-        <td><%= link_to 'Destroy', region, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= region.country.name %></td>
+        <td><%= link_to 'Просмотр', region %></td>
+        <td><%= link_to 'Изменить', edit_region_path(region) %></td>
+        <td><%= link_to 'Удалить', region, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Region', new_region_path %>
+<%= link_to 'Добавить регион в список', new_region_path %>

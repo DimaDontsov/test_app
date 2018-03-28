@@ -1,0 +1,42 @@
+<%= form_with(model: hostel, local: true) do |form| %>
+  <% if hostel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hostel.errors.count, "error") %> prohibited this hostel from being saved:</h2>
+
+      <ul>
+      <% hostel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, "Название" %>
+    <%= form.text_field :name, id: :hostel_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price, "Цена" %>
+    <%= form.number_field :price, id: :hostel_price, min: 0 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address, "Адрес" %>
+    <%= form.text_field :address, id: :hostel_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :about, "Описание" %>
+    <%= form.text_area :about, id: :hostel_about %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city_id, "Город, в котором расположена турбаза" %>
+    <%= form.select :city_id, City.all.collect{|c| [c.name, c.id]} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Сохранить"%>
+  </div>
+<% end %>

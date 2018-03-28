@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :hostels
   resources :regions
   resources :companies
   get 'last_controller/newLife'

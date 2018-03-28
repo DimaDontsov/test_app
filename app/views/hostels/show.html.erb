@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Название турбазы:</strong>
+  <%= @hostel.name %>
+</p>
+
+<p>
+  <strong>Цена:</strong>
+  <%= @hostel.price %>
+</p>
+
+<p>
+  <strong>Адрес:</strong>
+  <%= @hostel.address %>
+</p>
+
+<p>
+  <strong>Описание:</strong>
+  <%= @hostel.about %>
+</p>
+
+<p>
+  <strong>Название города, в котором расположена турбаза:</strong>
+  <%= @hostel.city.name %>
+</p>
+
+<%= link_to 'Изменить данные о турбазе', edit_hostel_path(@hostel) %> |
+<%= link_to 'Вернуться к списку турбаз', hostels_path %>

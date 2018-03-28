@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180324150649) do
+ActiveRecord::Schema.define(version: 20180328192916) do
 
   create_table "cities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 20180324150649) do
     t.string "name"
   end
 
+  create_table "hostels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.integer "price"
+    t.string "address"
+    t.string "about"
+    t.bigint "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_hostels_on_city_id"
+  end
+
   create_table "regions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.bigint "country_id"
@@ -39,5 +50,6 @@ ActiveRecord::Schema.define(version: 20180324150649) do
   end
 
   add_foreign_key "cities", "regions"
+  add_foreign_key "hostels", "cities"
   add_foreign_key "regions", "countries"
 end

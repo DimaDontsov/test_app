@@ -14,9 +14,8 @@
   <tbody>
     <% @cities.each do |city| %>
       <tr>
-        <td><%= city.name %></td>
+        <td><%= link_to city.name, city %></td>
         <td><%= city.region.name %></td>
-        <td><%= link_to 'Просмотр', city %></td>
         <td><%= link_to 'Изменить', edit_city_path(city) %></td>
         <td><%= link_to 'Удалить', city, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
       </tr>

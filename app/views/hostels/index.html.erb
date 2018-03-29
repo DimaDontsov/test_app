@@ -17,12 +17,11 @@
   <tbody>
     <% @hostels.each do |hostel| %>
       <tr>
-        <td><%= hostel.name %></td>
+        <td><%= link_to hostel.name, hostel %></td>
         <td><%= hostel.price %></td>
         <td><%= hostel.address %></td>
         <td><%= hostel.about %></td>
         <td><%= hostel.city.name %></td>
-        <td><%= link_to 'Просмотр', hostel %></td>
         <td><%= link_to 'Изменить', edit_hostel_path(hostel) %></td>
         <td><%= link_to 'Удалить', hostel, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
       </tr>

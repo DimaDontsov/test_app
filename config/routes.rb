@@ -4,10 +4,9 @@ Rails.application.routes.draw do
 
   resources :hostels
   resources :regions
-  resources :companies
   get 'last_controller/newLife'
 
-  root 'countries#index'
+  root 'hostels#index'
 
   get 'location/index'
 

@@ -12,31 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name, "Название" %>
+    <%= form.label :name, "Название" %> <br>
     <%= form.text_field :name, id: :hostel_name %>
   </div>
 
   <div class="field">
-    <%= form.label :price, "Цена, руб." %>
+    <%= form.label :price, "Цена, руб." %> <br>
     <%= form.number_field :price, id: :hostel_price, min: 0 %>
   </div>
 
   <div class="field">
-    <%= form.label :address, "Адрес" %>
+    <%= form.label :address, "Адрес" %> <br>
     <%= form.text_field :address, id: :hostel_address %>
   </div>
 
   <div class="field">
-    <%= form.label :about, "Описание" %>
+    <%= form.label :about, "Описание" %> <br>
     <%= form.text_area :about, id: :hostel_about %>
   </div>
 
   <div class="field">
-    <%= form.label :city_id, "Город, в котором расположена турбаза" %>
+    <%= form.label :city_id, "Город, в котором расположена турбаза" %> <br>
     <%= form.select :city_id, City.all.collect{|c| [c.name, c.id]} %>
   </div>
 
   <div class="actions">
+    <br>
     <%= form.submit "Сохранить"%>
   </div>
 <% end %>

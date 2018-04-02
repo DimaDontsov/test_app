@@ -12,16 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name, "Название"%>
+    <%= form.label :name, "Название"%> <br>
     <%= form.text_field :name, id: :city_name %>
   </div>
 
   <div class="field">
-    <%= form.label :region_id, "Регион, в котором расположен город" %>
+    <%= form.label :region_id, "Регион, в котором расположен город" %> <br>
     <%= form.select :region_id, Region.all.collect{|c| [c.name, c.id]} %>
   </div>
 
   <div class="actions">
+    <br>
     <%= form.submit "Сохранить" %>
   </div>
 <% end %>

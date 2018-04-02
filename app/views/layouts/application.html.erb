@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Myapp</title>
     <%= csrf_meta_tags %>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="navbar-inner">
-        <div class="container">
-          <h1>База данных турбаз</h1>
-          <nav>
-            <ul class="nav pull-right">
-              <li><%= link_to "Страны", countries_path %></li>
-              <li><%= link_to "Регионы", regions_path %></li>
-              <li><%= link_to "Города", cities_path %></li>
-              <li><%= link_to "Турбазы", hostels_path %></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+
+    <div class="row" align="center">
+      <h1>База данных турбаз</h1>
+    </div>
+
+    <div class="row" align="center">
+      <ul class="nav nav-pills">
+        <a href= <%=hostels_path%> role="button" class="btn btn-primary">Турбазы</a>
+        <a href=<%=countries_path%> role="button" class="btn btn-primary">Страны</a>
+        <a href=<%=regions_path%> role="button" class="btn btn-primary">Регионы</a>
+        <a href=<%=cities_path%> role="button" class="btn btn-primary">Города</a>
+      </ul>
+    </div>
+
     <div class="container">
       <%= yield %>
     </div>

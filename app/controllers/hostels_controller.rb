@@ -28,7 +28,7 @@ class HostelsController < ApplicationController
 
     respond_to do |format|
       if @hostel.save
-        format.html { redirect_to @hostel, notice: 'Hostel was successfully created.' }
+        format.html { redirect_to @hostel, notice: 'Турбаза успешно добавлена.' }
         format.json { render :show, status: :created, location: @hostel }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class HostelsController < ApplicationController
   def update
     respond_to do |format|
       if @hostel.update(hostel_params)
-        format.html { redirect_to @hostel, notice: 'Hostel was successfully updated.' }
+        format.html { redirect_to @hostel, notice: 'Информация о турбазе успешно обновлена.' }
         format.json { render :show, status: :ok, location: @hostel }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class HostelsController < ApplicationController
   def destroy
     @hostel.destroy
     respond_to do |format|
-      format.html { redirect_to hostels_url, notice: 'Hostel was successfully destroyed.' }
+      format.html { redirect_to hostels_url, notice: 'Турбаза успешно удалена.' }
       format.json { head :no_content }
     end
   end

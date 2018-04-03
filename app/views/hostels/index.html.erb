@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Турбазы</h1>
+<h1 align="center">Турбазы</h1>
+
+<a href= <%=new_hostel_path%> role="button" class="btn btn-primary">Добавить турбазу</a>
+
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -26,7 +29,9 @@
         <td><%= hostel.address %></td>
         <td><%= hostel.about %></td>
         <td>
-          <%= link_to 'Изменить', edit_hostel_path(hostel) %>
+          <a href= <%=edit_hostel_path(hostel)%> role="button" class="btn btn-primary">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </a>
           <%= link_to 'Удалить', hostel, method: :delete, data: { confirm: 'Вы уверены?' } %>
         </td>
       </tr>
@@ -34,6 +39,3 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'Добавить турбазу в список', new_hostel_path %>

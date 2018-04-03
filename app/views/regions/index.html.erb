@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Регионы</h1>
+<h1 align="center">Регионы</h1>
+
+<a href= <%=new_region_path%> role="button" class="btn btn-primary">Добавить регион</a>
 
 <table class="table table-bordered">
   <thead>
@@ -17,14 +19,12 @@
         <td><%= link_to region.name, region %></td>
         <td><%= region.country.name %></td>
         <td>
-          <%= link_to 'Изменить', edit_region_path(region) %>
+          <a href= <%=edit_region_path(region)%> role="button" class="btn btn-primary">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </a>
           <%= link_to 'Удалить', region, method: :delete, data: { confirm: 'Вы уверены?' } %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'Добавить регион в список', new_region_path %>

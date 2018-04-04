@@ -4,7 +4,8 @@ class HostelsController < ApplicationController
   # GET /hostels
   # GET /hostels.json
   def index
-    @hostels = Hostel.all
+    @hostels = Hostel.paginate(:page => params[:page], :per_page => 3)
+
   end
 
   # GET /hostels/1
@@ -61,9 +62,7 @@ class HostelsController < ApplicationController
     end
   end
 
-  def paginate
-    @hostels = Hostel.paginate(:page => params[:page], :per_page => 30)
-  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

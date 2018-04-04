@@ -3,3 +3,19 @@
 @import "bootstrap";
 .table > tbody > tr > td {vertical-align: middle; text-align: center}
 .table > thead > tr > th {text-align: center}
+.t
+{
+  text-align:justify;
+  line-height:0 ;
+}
+.t:after
+{
+  content:'';
+  width:100%;
+  display:inline-block;
+}
+.i
+{
+  display:inline-block;
+  line-height:normal;
+}

@@ -2,17 +2,20 @@
 
 <h1 align="center">Турбазы</h1>
 
-<a href= <%=new_hostel_path%> role="button" class="btn btn-success">
-  <span class="glyphicon glyphicon-plus"></span>
-  Добавить турбазу
-</a>
-
-<%=will_paginate @hostels %>
-ru:
-will_paginate:
-previous_label: "&#8592; Назад"
-next_label: "Далее &#8594;"
-page_gap: "&hellip;"
+<div class="t">
+  <div class="i" align="left">
+    <a href= <%=new_hostel_path%> role="button" class="btn btn-success">
+      <span class="glyphicon glyphicon-plus"></span>
+      Добавить турбазу
+    </a>
+  </div>
+  <div class="i" align="right">
+    <% if @hostels.size > 0 %>
+      <%= will_paginate @hostels, renderer:BootstrapPagination::Rails,
+                        :previous_label=>'Предыдущий',:next_label=>'Следующий' %>
+    <% end %>
+  </div>
+</div>
 
 <table class="table table-bordered">
   <thead>

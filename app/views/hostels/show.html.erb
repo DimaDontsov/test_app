@@ -22,8 +22,14 @@
 
 <p>
   <strong>Название города, в котором расположена турбаза:</strong>
-  <%= @hostel.city.name %>
+  <%= link_to @hostel.city.name, @hostel.city %>
 </p>
 
-<%= link_to 'Изменить данные о турбазе', edit_hostel_path(@hostel) %> |
-<%= link_to 'Вернуться к списку турбаз', hostels_path %>
+<a href= <%=edit_hostel_path(@hostel)%> role="button" class="btn btn-primary">
+  <span class="glyphicon glyphicon-pencil"></span>
+</a>
+
+<a href= <%=hostels_path%> role="button" class="btn btn-primary">
+  <span class="glyphicon glyphicon-arrow-left"></span>
+  Вернуться к списку турбаз
+</a>

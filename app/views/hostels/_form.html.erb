@@ -1,6 +1,6 @@
 <%= form_with(model: hostel, local: true) do |form| %>
   <% if hostel.errors.any? %>
-    <div id="error_explanation">
+    <div class="alert alert-danger" id="error_explanation">
       <h2><%= pluralize(hostel.errors.count, "error") %> prohibited this hostel from being saved:</h2>
 
       <ul>
@@ -39,5 +39,12 @@
   <div class="actions">
     <br>
     <%= form.submit "Сохранить"%>
+    <a href= <%=new_hostel_path%> role="button" class="btn btn-success">
+      <span class="glyphicon glyphicon-ok"></span>
+      Cохранить
+    </a>
+    <button type="button" сlass="btn btn-success" name="save" value="Сохранить" onClick="return confirmSubmit()">
+      <span class="glyphicon glyphicon-ok"></span>
+    </button>
   </div>
 <% end %>

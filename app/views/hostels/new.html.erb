@@ -2,4 +2,7 @@
 
 <%= render 'form', hostel: @hostel %>
 
-<%= link_to 'Вернуться к списку турбаз', hostels_path %>
+<a href= <%=hostels_path%> role="button" class="btn btn-primary">
+  <span class="glyphicon glyphicon-arrow-left"></span>
+  Вернуться к списку турбаз
+</a>

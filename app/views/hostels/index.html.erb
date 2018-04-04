@@ -2,7 +2,17 @@
 
 <h1 align="center">Турбазы</h1>
 
-<a href= <%=new_hostel_path%> role="button" class="btn btn-primary">Добавить турбазу</a>
+<a href= <%=new_hostel_path%> role="button" class="btn btn-success">
+  <span class="glyphicon glyphicon-plus"></span>
+  Добавить турбазу
+</a>
+
+<%=will_paginate @hostels %>
+ru:
+will_paginate:
+previous_label: "&#8592; Назад"
+next_label: "Далее &#8594;"
+page_gap: "&hellip;"
 
 <table class="table table-bordered">
   <thead>
@@ -32,7 +42,14 @@
           <a href= <%=edit_hostel_path(hostel)%> role="button" class="btn btn-primary">
             <span class="glyphicon glyphicon-pencil"></span>
           </a>
-          <%= link_to 'Удалить', hostel, method: :delete, data: { confirm: 'Вы уверены?' } %>
+
+          <a href="#" role="button" class="btn btn-danger" onclick="deleteRecord(hostel)">
+            <span class="glyphicon glyphicon-remove"></span>
+          </a>
+
+          <%= link_to 'Удалить', hostel, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger" %>
+            <i class="glyphicon glyphicon-remove"></i>
+
         </td>
       </tr>
     <% end %>

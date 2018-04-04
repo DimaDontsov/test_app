@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Bootstrap
 gem 'bootstrap-sass'
-
+gem 'will_paginate'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

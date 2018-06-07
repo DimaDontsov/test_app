@@ -2,20 +2,23 @@
 
 <h1 align="center">Турбазы</h1>
 
-<div class="t">
-  <div class="i" align="left">
-    <a href= <%=new_hostel_path%> role="button" class="btn btn-success">
+<form class="form-inline">
+
+
+  <div  align="right">
+    <% if @hostels.size > 0 %>
+      <%= will_paginate @hostels, renderer: BootstrapPagination::Rails,
+                        :previous_label => 'Предыдущий', :next_label => 'Следующий' %>
+    <% end %>
+  </div>
+
+  <div class="form-group" align="left">
+    <a href=<%= new_hostel_path %> role="button" class="btn btn-success">
       <span class="glyphicon glyphicon-plus"></span>
       Добавить турбазу
     </a>
   </div>
-  <div class="i" align="right">
-    <% if @hostels.size > 0 %>
-      <%= will_paginate @hostels, renderer:BootstrapPagination::Rails,
-                        :previous_label=>'Предыдущий',:next_label=>'Следующий' %>
-    <% end %>
-  </div>
-</div>
+</form>
 
 <table class="table table-bordered">
   <thead>
@@ -46,12 +49,8 @@
             <span class="glyphicon glyphicon-pencil"></span>
           </a>
 
-          <a href="#" role="button" class="btn btn-danger" onclick="deleteRecord(hostel)">
-            <span class="glyphicon glyphicon-remove"></span>
-          </a>
-
           <%= link_to 'Удалить', hostel, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-danger" %>
-            <i class="glyphicon glyphicon-remove"></i>
+
 
         </td>
       </tr>
@@ -59,3 +58,9 @@
   </tbody>
 </table>
 
+<div class="form-group" align="right">
+  <% if @hostels.size > 0 %>
+    <%= will_paginate @hostels, renderer:BootstrapPagination::Rails,
+                      :previous_label=>'Предыдущий',:next_label=>'Следующий' %>
+  <% end %>
+</div>
